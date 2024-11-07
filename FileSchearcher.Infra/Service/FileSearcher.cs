@@ -19,7 +19,7 @@ namespace FileSchearcher.Infra.Service
                 var extension = Path.GetExtension(filePath);
                 if (!allowedExtensions.Contains(extension)) return;
 
-                var fileName = Path.GetFileName(filePath);
+                var fileName = Path.GetFileNameWithoutExtension(filePath);
                 var repository = GetRepositoryName(filePath);
                 var project = GetProjectName(repository);
 
