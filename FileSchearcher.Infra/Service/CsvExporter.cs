@@ -11,20 +11,26 @@ namespace FileSchearcher.Infra.Service
             string filePath = outputPath ?? Path.Combine(downloadsPath, "resultado.csv");
 
             // Define os cabeçalhos das colunas
-            var headers = new[] { "Objeto", "Tipo do Objeto", "Repositório", "Projeto", "Objeto Procurado" };
+            var headers = new[] { "Objeto", "Tipo do Objeto", "Repositorio", "Projeto", "Objeto Procurado" };
 
-            // Define o tamanho mínimo de cada coluna com base no cabeçalho
-            int[] columnWidths = headers.Select(h => h.Length).ToArray();
+            // Define o tamanho mínimo de cada coluna com base no cabeçalho e expande para um bom padding
+            int[] columnWidths = headers.Select(h => h.Length + 5).ToArray();
 
-            // Ajusta o tamanho de cada coluna com base nos dados
+            // Ajusta o tamanho de cada coluna com base nos dados para que seja um pouco maior que o maior valor
             foreach (var record in records)
             {
-                columnWidths[0] = Math.Max(columnWidths[0], record.FileName.Length);
-                columnWidths[1] = Math.Max(columnWidths[1], record.FileType.Length);
-                columnWidths[2] = Math.Max(columnWidths[2], record.Repository.Length);
-                columnWidths[3] = Math.Max(columnWidths[3], record.Project.Length);
-                columnWidths[4] = Math.Max(columnWidths[4], record.FoundTerm.Length);
+                columnWidths[0] = Math.Max(columnWidths[0], record.FileName.Length + 5); // Extra padding for readability
+                columnWidths[1] = Math.Max(columnWidths[1], record.FileType.Length + 5);
+                columnWidths[2] = Math.Max(columnWidths[2], record.Repository.Length + 5);
+                columnWidths[3] = Math.Max(columnWidths[3], record.Project.Length + 5);
+                columnWidths[4] = Math.Max(columnWidths[4], record.FoundTerm.Length + 5);
             }
+
+            // Filtra registros duplicados por arquivo e termo encontrado
+            var uniqueRecords = records
+                .GroupBy(r => (r.FileName, r.FoundTerm))
+                .Select(g => g.First())
+                .ToList();
 
             // Formata e escreve o CSV
             using var writer = new StreamWriter(filePath);
@@ -37,7 +43,7 @@ namespace FileSchearcher.Infra.Service
             );
 
             // Escreve cada linha com padding apropriado
-            foreach (var record in records)
+            foreach (var record in uniqueRecords)
             {
                 writer.WriteLine(
                     $"{record.FileName.PadRight(columnWidths[0])}, {record.FileType.PadRight(columnWidths[1])}, " +
