@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35027.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{DCE4E6CC-DC67-4AC9-9B4D-184250576E40}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{28E89357-8FEE-442A-A8CD-AB902B223539}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{A80D0DBF-B310-46EF-BB1B-F6EF59EB5833}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra", "Infra", "{FBFA9FBA-0349-44C7-A7F0-5FA0750E8BE7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileSchearcher.Application", "FileSchearcher.Application\FileSchearcher.Application.csproj", "{11CE9D04-73C9-4B73-957C-76A09ECA6C00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileSchearcher.Core", "FileSchearcher.Core\FileSchearcher.Core.csproj", "{95E36A77-6C04-4E51-BDA3-461AA3C87D91}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileSchearcher.Infra", "FileSchearcher.Infra\FileSchearcher.Infra.csproj", "{A6E6F1E3-B809-4948-849E-99C55C8B9730}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileSchearcher.Presentation.ConsoleApp", "FileSchearcher.Presentation.ConsoleApp\FileSchearcher.Presentation.ConsoleApp.csproj", "{186D6901-0365-486F-AA3B-D8633A5B9D3E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{11CE9D04-73C9-4B73-957C-76A09ECA6C00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11CE9D04-73C9-4B73-957C-76A09ECA6C00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11CE9D04-73C9-4B73-957C-76A09ECA6C00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11CE9D04-73C9-4B73-957C-76A09ECA6C00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95E36A77-6C04-4E51-BDA3-461AA3C87D91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95E36A77-6C04-4E51-BDA3-461AA3C87D91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95E36A77-6C04-4E51-BDA3-461AA3C87D91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95E36A77-6C04-4E51-BDA3-461AA3C87D91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6E6F1E3-B809-4948-849E-99C55C8B9730}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6E6F1E3-B809-4948-849E-99C55C8B9730}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6E6F1E3-B809-4948-849E-99C55C8B9730}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6E6F1E3-B809-4948-849E-99C55C8B9730}.Release|Any CPU.Build.0 = Release|Any CPU
+		{186D6901-0365-486F-AA3B-D8633A5B9D3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{186D6901-0365-486F-AA3B-D8633A5B9D3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{186D6901-0365-486F-AA3B-D8633A5B9D3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{186D6901-0365-486F-AA3B-D8633A5B9D3E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{11CE9D04-73C9-4B73-957C-76A09ECA6C00} = {DCE4E6CC-DC67-4AC9-9B4D-184250576E40}
+		{95E36A77-6C04-4E51-BDA3-461AA3C87D91} = {28E89357-8FEE-442A-A8CD-AB902B223539}
+		{A6E6F1E3-B809-4948-849E-99C55C8B9730} = {FBFA9FBA-0349-44C7-A7F0-5FA0750E8BE7}
+		{186D6901-0365-486F-AA3B-D8633A5B9D3E} = {A80D0DBF-B310-46EF-BB1B-F6EF59EB5833}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {88A4369E-5CC8-4ACA-BFBF-7396AAE3905B}
+	EndGlobalSection
+EndGlobal
